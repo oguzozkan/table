@@ -1,0 +1,242 @@
+/* Global CSS variables for consistent theming */
+:root {
+  --background-color: #F7F7F7;
+  --font-color: #333;
+  --border-color: #BDBDBD;
+  --hover-background-color: #EAEAEA;
+  --header-background-color: #2C2C2C;
+  --header-font-color: #FFFFFF;
+  --even-row-color: #EDEDED;
+  --input-border-color: #CCCCCC;
+  --input-focus-border-color: #B5B5B5;
+  --input-focus-shadow-color: #D1D1D1;
+  --input-placeholder-color: #A8A8A8;
+  --results-background-color: #F9F9F9;
+
+  --global-font-size: calc(10px + 0.2vw);
+}
+/* Default box-sizing for consistent element sizing */
+html {
+  box-sizing: border-box;
+}
+/* Base styling for the body element */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  font-size: var(--global-font-size);
+}
+/* Styling for the table container */
+.table-container {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 20px;
+}
+
+.table-wrapper {
+  max-width: 90%;
+  margin: 20px auto; 
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+  margin: 1%;
+  gap: 20px;
+}
+
+thead tr {
+  background-color: var(--header-background-color);
+  color: var(--header-font-color);
+  text-transform: uppercase;
+}
+.posts-per-page {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.posts-per-page:focus {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.postsPerPageSelect {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 8px 30px 8px 12px;
+  font-size: 16px;
+}
+
+.bi-chevron-bar-down {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: var(--font-color);
+  pointer-events: none;
+}
+
+
+
+.postsPerPageSelect {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  border: 1px solid var(--input-border-color);
+  border-radius: 5px;
+  display: inline-block;
+  padding: 8px 30px 8px 12px;
+  font-size: 1em;
+}
+/* Hover and focus effects for the postsPerPageSelect dropdown */
+.postsPerPageSelect:focus, .postsPerPageSelect:hover {
+  border: 1px solid var(--input-focus-border-color);
+  box-shadow: 0 0 10px var(--input-focus-shadow-color);
+}
+
+.posts-per-page-label {
+  display: inline-block;
+  margin-right: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.search-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 10x;
+  margin-right: auto; /* This will push all other items to the right of the container */
+}
+
+.search-input i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 1.6em;
+  color: var(--font-color);
+  pointer-events: none;
+}
+.search-input::placeholder {
+  color: #aaa;
+  opacity: 1;
+}
+.bi.bi-search {
+  position: absolute;
+  top: 50%;
+  
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: var(--font-color);
+  pointer-events: none;
+}
+
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 25px;
+  font-size: 0.9em;
+  min-width: 400px;
+  border: 1px solid #dee2e6;
+  table-layout: fixed;
+}
+
+thead tr {
+  background-color: #333;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+th, td {
+  padding: 12px 15px;
+  vertical-align: top;
+  border-bottom: 1px solid #dddfe2;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+th.key {
+  width: 20%;
+}
+
+th.value {
+  width: 80%;
+}
+
+.results-count {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 4px 8px;
+  font-size: 1em;
+  color: var(--font-color);
+  background-color: var(--results-background-color);
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+tbody tr:nth-of-type(even) {
+  background-color: #5a5959a2;
+}
+
+tbody tr:hover {
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  /* Hide table headers (but not display: none; for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    margin: 0 0 1rem 0;
+  }
+
+  tr:nth-child(odd) {
+    background: #ccc;
+  }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 0;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    content: attr(data-label);
+  }
+
+}

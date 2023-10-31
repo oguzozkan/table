@@ -1,0 +1,104 @@
+/* Pagination.css */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    flex-wrap: wrap; /* Allows wrapping if there's not enough space */
+    width: 100%;
+}
+
+.page-item {
+    list-style-type: none; /* Remove default bullet points */
+    margin: 0.5rem; /* Increase spacing a bit for better tap targets */
+}
+
+.page-link {
+    text-align: center;
+    border: 1px solid #cbd2d8; /* Border color */
+    background-color: #1d1d1d; /* Background color */
+    color: #f1f1f1; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    font-size: calc(0.4rem + 0.3vw); /* responsive font-size */
+    padding: 0.6rem 1rem;  /* Increased padding for larger tap targets */
+    cursor: pointer;
+    outline: none;
+    width: 5rem; /* Adjust this width as necessary */
+    
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+    text-decoration: none;
+    display: block; /* Block for larger tap targets */
+}
+.go-button{
+    border: 1px solid #cbd2d8; /* Border color */
+    background-color: #1d1d1d; /* Background color */
+    color: #f1f1f1; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+    font-size: calc(0.4rem + 0.3vw); /* responsive font-size */
+    padding: 0.4rem 1rem;  /* Increased padding for larger tap targets */
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+    text-decoration: none;
+    display: block;
+    margin-left: 4%;
+}
+.go-button:hover {
+    background-color: #ffffff; /* Hover background color */
+    color: #000000; /* Hover text color */
+}
+
+.page-item.active .page-link {
+    background-color: #e4e4e4; /* Active page background color */
+    color: #000000; /* Active page text color */
+    border: 1px solid transparent;
+    font-weight:bold;
+    text-decoration: none;
+    font-size: calc(0.8rem + 0.3vw); /* responsive font-size */
+    padding: 0.8rem 1.4rem; /* Increased padding for emphasis */
+}
+
+.page-link:hover {
+    background-color: #ffffff; /* Hover background color */
+    color: #000000; /* Hover text color */
+}
+
+.page-item.disabled .page-link {
+    background-color: #ffffff; /* Disabled background color */
+    color: #000000; /* Disabled text color */
+    border-color: #e9ecef; /* Disabled border color */
+    cursor: not-allowed;
+}
+
+.page-input-form {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 0.1rem;
+    
+     /* spacing on top, especially if it wraps to a new line on small screens */
+}
+.page-input{
+
+    border-radius: 5px;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background: #cbd2d8;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
